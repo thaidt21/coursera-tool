@@ -19,7 +19,7 @@ public class QuestionService {
     }
 
     public List<QuestionDto> getAllQuestions() {
-        return questionRepository.findAll().stream()
+        return questionRepository.findAllWithAnswers().stream()
                 .map(q -> new QuestionDto(
                         q.getQuestionText(),
                         q.getType(),
